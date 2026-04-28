@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary: #00A854;
+  --color-primary-dark: #008f47;
+  --color-dark-accent: #1A1A2E;
+  --color-bg-base: #F8FAFC;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-base text-dark-accent font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-slate-100 p-6;
+  }
+
+  .tab-pill {
+    @apply flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all cursor-pointer whitespace-nowrap;
+  }
+
+  .tab-pill-active {
+    @apply bg-primary text-white shadow-md shadow-primary/20;
+  }
+
+  .tab-pill-inactive {
+    @apply bg-white text-slate-500 hover:bg-slate-50 border border-slate-200;
+  }
+
+  .input-field {
+    @apply w-full bg-white border border-slate-200 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none;
+  }
+}
